@@ -1,0 +1,53 @@
+{
+  "collection": {
+    "variables": [],
+    "info": {
+      "_postman_id": "ac03df1d-90f0-401d-aa57-39c395253c80",
+      "name": "Sample collection test",
+      "description": "This is just a sample collection.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "This is a folder",
+        "description": "",
+        "item2": [
+          {
+            "name": "Sample POST Request",
+            "request": {
+              "url": "echo.getpostman.com/post",
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": ""
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "test"
+              },
+              "description": "This is a sample POST Request"
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Sample GET Request",
+        "request": {
+          "url": "echo.getpostman.com/get",
+          "method": "GET",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": []
+          },
+          "description": "This is a sample GET Request"
+        },
+        "response": []
+      }
+    ]
+  }
+}
