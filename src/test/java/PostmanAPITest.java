@@ -23,14 +23,13 @@ public class PostmanAPITest {
 
     @Test
     void getSingleCollection() {
-        ;
         String jsonResponse = GetCollectionRequests.getSingleCollectionRequest(UID).statusCode(200).extract().asString();
         Assert.assertEquals(new JSONObject(jsonResponse).getJSONObject("collection").getJSONObject("info").get("name"), singleCollectionName);
     }
 
     @Test
     void createColletion() throws IOException {
-        String jsonResponse = PostCollectionRequests.createCollection(collectionName).extract().asString();
+        String jsonResponse = PostCollectionRequests.createCollection(collectionName).statusCode(200).extract().asString();
         Assert.assertEquals(new JSONObject(jsonResponse).getJSONObject("collection").get("name"), collectionName);
     }
 
@@ -39,7 +38,7 @@ public class PostmanAPITest {
         for (int i = 0; i < 3; i++) {
             DateFormat dateFormat = new SimpleDateFormat("ddMMyyhhmmssSSS");
             String uniqueCollectionName = "Sample " + dateFormat.format(Calendar.getInstance().getTime());
-            String jsonResponse = PostCollectionRequests.createCollection(uniqueCollectionName).extract().asString();
+            String jsonResponse = PostCollectionRequests.createCollection(uniqueCollectionName).statusCode(200).extract().asString();
             Assert.assertEquals(new JSONObject(jsonResponse).getJSONObject("collection").get("name"), uniqueCollectionName);
         }
     }
